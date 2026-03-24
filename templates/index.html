@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sarcasm Detection App</title>
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: linear-gradient(to right, #f8f9fa, #e9ecef);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .container {
+            max-width: 600px;
+            margin-top: 80px;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #343a40;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Sarcasm Detection</h1>
+
+    <form method="POST">
+        <div class="mb-3">
+            <input type="text" class="form-control form-control-lg" name="sentence" placeholder="Enter a sentence..." required>
+        </div>
+        <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-primary btn-lg">Detect Sarcasm</button>
+        </div>
+    </form>
+
+    {% if prediction %}
+        <div class="result alert 
+            {% if prediction == 'Sarcastic' %}alert-danger{% else %}alert-success{% endif %}" role="alert">
+            Prediction: {{ prediction }}
+        </div>
+    {% endif %}
+</div>
+
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
