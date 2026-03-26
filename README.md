@@ -48,3 +48,30 @@ A **Flask-based web application** that detects sarcasm in text using **LSTM + Wo
 - **Flask + Bootstrap 5**
 - Optionally: **MLflow** for experiment tracking & model management
 - **HTML / CSS** for frontend
+  ---
+  ## Installation and run 
+  - pip install -r requirements.txt
+  - python main.py
+  - python app.py
+---
+
+
+##  Project Structure
+
+* **data/**
+    * `sarcasm_dataset.csv`: The raw dataset containing text samples and sarcasm labels.
+* **src/** (Source Code)
+    * `preprocess.py`: Text cleaning, stopword removal, and tokenization logic.
+    * `w2v_model.py`: Script for training or loading Word2Vec embeddings.
+    * `lstm_model.py`: Defines the LSTM neural network architecture.
+    * `train_model.py`: The orchestration script to train and evaluate the model.
+    * `utils.py`: Helper functions for file I/O and logging.
+* **templates/**
+    * `index.html`: The frontend UI for the Flask web application.
+* **Root Files**
+    * `app.py` / `main.py`: Flask application entry points to serve predictions.
+    * `sarcasm_lstm_model.h5`: The trained Keras model weights.
+    * `tokenizer.pkl`: Serialized tokenizer to ensure consistent text-to-sequence conversion.
+    * `requirements.txt`: List of necessary Python libraries.
+
+---
