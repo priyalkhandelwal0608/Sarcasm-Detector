@@ -1,6 +1,6 @@
-pandas
-nltk
-gensim
-tensorflow
-scikit-learn
 flask
+pandas
+numpy
+scikit-learn
+tensorflow
+nltk
